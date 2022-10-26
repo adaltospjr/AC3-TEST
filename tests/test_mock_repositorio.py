@@ -16,7 +16,7 @@ class ExcecaoLivroNaoEncontrado(Exception):
 
 
 @pytest.fixture
-def livro():
+def blog_fixture():
     return [
 	{
 		"userId": 1,
@@ -621,9 +621,9 @@ def livro():
 ]
 
 # o livro será passado automaticamente como parâmetro, pois é uma fixture
-def test_blog(livro: dict):
+def test_blog(blog_fixture: dict):
     mocker = Mock()
-    mocker.return_value = livro
+    mocker.return_value = blog_fixture
 
     teste1 = Blog.post_by_user_id(userId="1")
     teste2 = Blog.post_by_user_id(userId="2")
@@ -636,11 +636,10 @@ def test_blog(livro: dict):
     assert mocker()[3] == teste4
 
 # Testando o método posts
-def test_blog2(livro: dict):
+def test_blog2(blog_fixture: dict):
     mocker = Mock()
-    mocker.return_value = livro
+    mocker.return_value = blog_fixture
 
     teste_geral = Blog.posts()
 
     assert mocker() == teste_geral
-
