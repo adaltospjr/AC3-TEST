@@ -1,5 +1,5 @@
-
 import requests
+
 
 class Blog:
     def posts():
@@ -11,6 +11,3 @@ class Blog:
         e = f"https://jsonplaceholder.typicode.com/posts/{userId}"
         response = requests.get(e)
         return response.json()
-
-teste = Blog.post_by_user_id('1')
-print(teste['id'])
