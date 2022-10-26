@@ -1,3 +1,9 @@
+
+#Adalto de Almeida Linhares Santos - RA: 1802042
+#Beatriz Garcia de Andrade - RA: 1904895
+#Pedro Silverio Puerta - RA: 1905136
+
+
 from unittest.mock import Mock
 
 import pytest
@@ -634,7 +640,7 @@ def test_blog2(livro: dict):
     mocker = Mock()
     mocker.return_value = livro
 
-    livro2 = Blog.posts()
+    teste_geral = Blog.posts()
 
-    assert mocker() == livro2
+    assert mocker() == teste_geral
 
