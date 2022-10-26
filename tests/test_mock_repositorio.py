@@ -619,9 +619,15 @@ def test_blog(livro: dict):
     mocker = Mock()
     mocker.return_value = livro
 
-    livro2 = Blog.post_by_user_id(userId="1")
+    teste1 = Blog.post_by_user_id(userId="1")
+    teste2 = Blog.post_by_user_id(userId="2")
+    teste3 = Blog.post_by_user_id(userId="3")
+    teste4 = Blog.post_by_user_id(userId="4")
 
-    assert mocker()[0] == livro2
+    assert mocker()[0] == teste1
+    assert mocker()[1] == teste2
+    assert mocker()[2] == teste3
+    assert mocker()[3] == teste4
 
 # Testando o método posts
 def test_blog2(livro: dict):
